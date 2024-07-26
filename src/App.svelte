@@ -97,4 +97,7 @@
       {/if}
     </div>
   </Route>
+  <Route path="/product/:id" let:params>
+    <ProductDetail {params} />
+  </Route>
 </Router>
