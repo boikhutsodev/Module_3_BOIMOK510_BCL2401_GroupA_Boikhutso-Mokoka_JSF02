@@ -34,7 +34,7 @@
           <p class="text-gray-700 mb-2">${$product.price}</p>
           <p class="text-gray-500 mb-4">Category: {$product.category}</p>
           <p class="text-gray-700 mb-4">Rating: {$product.rating.rate} ({$product.rating.count} reviews)</p>
-          <p class="text-gray-700">{$product.description}</p>
+          <p class="text-gray-700 ">{$product.description}</p>
         </div>
       {/if}
     </div>
