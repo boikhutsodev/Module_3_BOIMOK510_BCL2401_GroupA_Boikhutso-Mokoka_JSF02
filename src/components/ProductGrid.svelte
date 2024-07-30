@@ -32,6 +32,7 @@ function isFavorite(productId) {
       <div class="card border p-4 rounded shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer">
         <a use:link href={`/product/${product.id}`} class="block">
           <img src={product.image} alt={product.title} class="w-400px h-48 object-cover mb-4 rounded" />
+        </a>
           <h3 class="text-lg font-bold mb-2">{product.title}</h3>
           <p class="text-gray-700 mb-2">${product.price}</p>
           <p class="text-gray-500">{product.category}</p>
@@ -58,7 +59,6 @@ function isFavorite(productId) {
               Add To Cart +
             </button>
           </div>
-        </a>
       </div>
     {/each}
   </div>
