@@ -39,7 +39,7 @@
         <img
           src={product.image}
           alt={product.title}
-          class="w-400px h-48 object-cover mb-4 rounded"
+          class="w-400px h-48 object-cover mb-5 rounded"
         />
       </a>
       <h3 class="text-lg font-bold mb-2">{product.title}</h3>
