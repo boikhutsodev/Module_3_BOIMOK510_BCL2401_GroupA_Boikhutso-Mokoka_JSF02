@@ -81,7 +81,7 @@
       <div class="bg-white p-6 rounded shadow-lg mt-20">
         <button
           on:click={goBack}
-          class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-75 transition duration-200"
+          class="bg-orange-400 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-75 transition duration-200"
         >
           Go Back
         </button>
