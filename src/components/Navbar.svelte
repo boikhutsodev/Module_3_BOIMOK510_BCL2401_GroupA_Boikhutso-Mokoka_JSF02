@@ -68,6 +68,7 @@
   </div>
   {#if $open}
     <div class="md:hidden mt-4 bg-pink-500">
+      <a href="/" class="block p-2 hover:bg-pink-400">Home</a>
       <a href="./" class="block p-2 hover:bg-pink-400">Wishlist</a>
       <a href="./" class="block p-2 hover:bg-pink-400">
         <svg
