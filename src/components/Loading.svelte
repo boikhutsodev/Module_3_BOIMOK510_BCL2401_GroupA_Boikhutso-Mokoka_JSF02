@@ -1,4 +1,3 @@
-<div class="loading text-center text-2xl justify-center items-center  ">
-    Loading...
-  </div>
-  
+<div class="loading text-center text-2xl justify-center items-center">
+  Loading...
+</div>
