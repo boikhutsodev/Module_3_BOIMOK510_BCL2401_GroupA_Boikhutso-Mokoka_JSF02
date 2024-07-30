@@ -93,13 +93,13 @@
         </p>
         <p class="text-gray-700">{$product.description}</p>
         <div class="space-y-4 space-x-4">
-          <button on:click={() => toggleFavorite(product.id)} class="mr-10px">
+          <button on:click={() => toggleFavorite($product.id)} class="mr-10px">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               class="w-6 h-6"
-              class:text-red-500={isFavorite(product.id)}
-              class:text-gray-300={!isFavorite(product.id)}
+              class:text-red-500={isFavorite($product.id)}
+              class:text-gray-300={!isFavorite($product.id)}
               viewBox="0 0 24 24"
             >
               <path
