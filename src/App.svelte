@@ -53,7 +53,10 @@
         prods = prods.sort((a, b) => a.price - b.price);
       } else if ($sortOrder === "desc") {
         prods = prods.sort((a, b) => b.price - a.price);
+      } else if ($sortOrder === "default") {
+        prods = prods.sort((a, b) => a.id - b.id);
       }
+
       if ($searchQuery) {
         prods = prods.filter((product) =>
           product.title.toLowerCase().includes($searchQuery.toLowerCase())
@@ -101,6 +104,7 @@
 
         <select bind:value={$sortOrder} class="border p-2 rounded">
           <option value="">Sort by Price</option>
+          <option value="default">Default</option>
           <option value="asc">Lowest to Highest</option>
           <option value="desc">Highest to Lowest</option>
         </select>
