@@ -5,6 +5,7 @@
   export let params;
   const product = writable(null);
   const loading = writable(true);
+  const favorites = writable([]);
 
   onMount(async () => {
     loading.set(true);
@@ -16,30 +17,33 @@
     loading.set(false);
   });
 
+  onMount(() => {
+    const storedFavorites = localStorage.getItem("favorites");
+    if (storedFavorites) {
+      favorites.set(JSON.parse(storedFavorites));
+    }
+  });
+
   function goBack() {
     window.history.back();
   }
 
-  let favorites = [];
-
-  onMount(() => {
-    const storedFavorites = localStorage.getItem("favorites");
-    if (storedFavorites) {
-      favorites = JSON.parse(storedFavorites);
-    }
-  });
-
   function toggleFavorite(productId) {
-    if (favorites.includes(productId)) {
-      favorites = favorites.filter((id) => id !== productId);
-    } else {
-      favorites.push(productId);
-    }
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+    favorites.update((currentFavorites) => {
+      const newFavorites = currentFavorites.includes(productId)
+        ? currentFavorites.filter((id) => id !== productId)
+        : [...currentFavorites, productId];
+      localStorage.setItem("favorites", JSON.stringify(newFavorites));
+      return newFavorites;
+    });
   }
 
   function isFavorite(productId) {
-    return favorites.includes(productId);
+    let isFav;
+    favorites.subscribe((favs) => {
+      isFav = favs.includes(productId);
+    })();
+    return isFav;
   }
 </script>
 
@@ -89,13 +93,13 @@
         </p>
         <p class="text-gray-700">{$product.description}</p>
         <div class="space-y-4 space-x-4">
-          <button on:click={() => toggleFavorite($product.id)} class="mr-10px">
+          <button on:click={() => toggleFavorite(product.id)} class="mr-10px">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="currentColor"
               class="w-6 h-6"
-              class:text-red-500={isFavorite($product.id)}
-              class:text-gray-300={!isFavorite($product.id)}
+              class:text-red-500={isFavorite(product.id)}
+              class:text-gray-300={!isFavorite(product.id)}
               viewBox="0 0 24 24"
             >
               <path
