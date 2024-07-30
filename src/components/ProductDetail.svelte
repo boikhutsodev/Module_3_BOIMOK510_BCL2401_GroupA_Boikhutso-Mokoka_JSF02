@@ -76,12 +76,14 @@
     </div>
   </div>
 {:else}
-  <div class="container flex justify-center items-center p-10">
+  <div
+    class="container flex justify-center items-center p-6 min-h-screen m-auto"
+  >
     {#if $product}
       <div class="bg-white p-6 rounded shadow-lg mt-5">
         <button
           on:click={goBack}
-          class="bg-orange-400 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-opacity-75 transition duration-200"
+          class="fixed bg-orange-400 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-opacity-75 transition duration-200"
         >
           Go Back
         </button>
@@ -94,8 +96,8 @@
         </div>
         <h3 class="text-2xl font-bold mb-2">{$product.title}</h3>
         <p class="text-gray-700 mb-2">${$product.price}</p>
-        <p class="text-gray-500 mb-4">Category: {$product.category}</p>
-        <p class="text-gray-700 mb-4">
+        <p class="text-gray-500 mb-2">Category: {$product.category}</p>
+        <p class="text-gray-700 mb-2">
           Rating: {$product.rating.rate} ({$product.rating.count} reviews)
         </p>
         <p class="text-gray-700">{$product.description}</p>
