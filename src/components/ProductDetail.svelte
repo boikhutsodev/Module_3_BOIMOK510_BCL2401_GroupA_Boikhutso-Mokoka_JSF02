@@ -78,10 +78,10 @@
 {:else}
   <div class="container flex justify-center items-center p-10">
     {#if $product}
-      <div class="bg-white p-6 rounded shadow-lg mt-20">
+      <div class="bg-white p-6 rounded shadow-lg mt-5">
         <button
           on:click={goBack}
-          class="bg-orange-400 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-75 transition duration-200"
+          class="bg-orange-400 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-pink-300 focus:ring-opacity-75 transition duration-200"
         >
           Go Back
         </button>
