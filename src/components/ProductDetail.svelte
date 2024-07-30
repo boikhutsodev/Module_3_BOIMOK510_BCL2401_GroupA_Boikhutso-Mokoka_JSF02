@@ -89,7 +89,6 @@
         </p>
         <p class="text-gray-700">{$product.description}</p>
         <div class="space-y-4 space-x-4">
-          <!-- SVG Favr -->
           <button on:click={() => toggleFavorite($product.id)} class="mr-10px">
             <svg
               xmlns="http://www.w3.org/2000/svg"
