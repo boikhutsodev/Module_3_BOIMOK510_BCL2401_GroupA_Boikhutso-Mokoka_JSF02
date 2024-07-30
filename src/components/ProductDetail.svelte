@@ -76,15 +76,22 @@
     </div>
   </div>
 {:else}
-  <div class="container mx-auto p-6">
+  <div class="container flex justify-center items-center p-10">
     {#if $product}
       <div class="bg-white p-6 rounded shadow-lg mt-20">
-        <button on:click={goBack} class="bg-pink-600"> Go Back </button>
-        <img
-          src={$product.image}
-          alt={$product.title}
-          class="w-400px h-64 object-cover mb-4 rounded"
-        />
+        <button
+          on:click={goBack}
+          class="bg-pink-500 hover:bg-pink-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-pink-400 focus:ring-opacity-75 transition duration-200"
+        >
+          Go Back
+        </button>
+        <div class="flex justify-center items-center mt-5">
+          <img
+            src={$product.image}
+            alt={$product.title}
+            class="w-400px h-64 object-cover mb-4 rounded"
+          />
+        </div>
         <h3 class="text-2xl font-bold mb-2">{$product.title}</h3>
         <p class="text-gray-700 mb-2">${$product.price}</p>
         <p class="text-gray-500 mb-4">Category: {$product.category}</p>
@@ -92,7 +99,7 @@
           Rating: {$product.rating.rate} ({$product.rating.count} reviews)
         </p>
         <p class="text-gray-700">{$product.description}</p>
-        <div class="space-y-4 space-x-4">
+        <div class="flex justify-evenly items-center mt-5">
           <button on:click={() => toggleFavorite($product.id)} class="mr-10px">
             <svg
               xmlns="http://www.w3.org/2000/svg"

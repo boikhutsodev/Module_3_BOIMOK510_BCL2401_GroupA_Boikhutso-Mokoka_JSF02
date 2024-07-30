@@ -31,7 +31,11 @@
     <div
       class="card border p-4 rounded shadow hover:shadow-lg transition-shadow duration-300 cursor-pointer"
     >
-      <a use:link href={`/product/${product.id}`} class="block">
+      <a
+        use:link
+        href={`/product/${product.id}`}
+        class="flex justify-center items-center"
+      >
         <img
           src={product.image}
           alt={product.title}
@@ -44,7 +48,7 @@
       <p class="text-gray-700 mb-4">
         Rating: {product.rating.rate} ({product.rating.count} reviews)
       </p>
-      <div class="space-y-4 space-x-4">
+      <div class="flex justify-evenly items-center mt-5">
         <button on:click={() => toggleFavorite(product.id)} class="mr-2.5">
           <svg
             xmlns="http://www.w3.org/2000/svg"
